@@ -104,7 +104,7 @@ const Header = ()=>{
                     <IconButton
                         color="inherit"
                         onClick={handleMobileMenuOpen}
-                        sx={{display:{md: none}, ml: 1}}
+                        sx={{display:{md: 'none'}, ml: 1}}
                     >
                         <MenuIcon/>
                     </IconButton>

@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://fakestoreapi.com'
+const API_BASE_URL = 'https://fakestoreapi.com'
 
 //función generica para  hacer peticiones fetch
 
@@ -18,11 +18,11 @@ const fetchData = async (endpoint)=>{
 export const api = {
     getProducts: ()=> fetchData('/products'),
 
-    getProduct: ()=> fetchData(`/products/${id}`),
+    getProduct: (id)=> fetchData(`/products/${id}`),
 
     getCategories: ()=> fetchData('products/categories'),
 
-    getProductsByCategory: ()=> fetchData(`products/category/${category}`),
+    getProductsByCategory: (category)=> fetchData(`products/category/${category}`),
 
-    getLimitedProducts: (limit)=> fetchData(`/products?limit=${limit}`),
-}
+    getLimitedProducts: (limit)=> fetchData(`/products?limit=${limit}`)
+};

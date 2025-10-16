@@ -27,14 +27,14 @@ const cartReducer = (state, action)=>{
                 );
             return {
                 ...state,
-                items: newItem,
+                items: updatedItems,
                 total: calculateTotal(updatedItems)
              };
             }
             const newItems = [...state.items, {...action.payload, quantity: 1}];
             return {
                 ...state,
-                items: newItem,
+                items: newItems,
                 total: calculateTotal(newItems),
             };
         case 'REMOVE_FROM_CART':
@@ -45,7 +45,7 @@ const cartReducer = (state, action)=>{
                 total: calculateTotal(filteredItems),
             };
         case 'UPDATE_QUANTITY':
-            const updatedItems = state.items.map((item) =>
+            const updatedItems = state.items.map(item =>
             item.id === action.payload.id
             ? { ...item, quantity: action.payload.quantity }
             : item
